@@ -66,12 +66,12 @@ public class QueueClass {
         if(isEmpty())
         {
             queueData = new BasicLinkedListClass();
-            queueData.setAtIndex(0, newValue, queueData.REPLACE);
+            queueData.setAtIndex(0, newValue, BasicLinkedListClass.REPLACE);
         }
         else
         {
             queueData.setAtIndex(queueData.getCurrentSize(), newValue, 
-            queueData.INSERT_BEFORE);
+            BasicLinkedListClass.INSERT_BEFORE);
         }
     }
     
@@ -90,8 +90,7 @@ public class QueueClass {
      */
     public boolean isEmpty()
     {
-        if(queueData.isEmpty()) return true;
-        return false;
+        return queueData.isEmpty();
     }
     
     /**
