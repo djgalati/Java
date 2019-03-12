@@ -70,8 +70,7 @@ public class IteratorClass extends BasicLinkedListClass{
      */
     public boolean isAtBeggining()
     {
-        if(currentIndex!=0) return false;
-        return true;
+        return currentIndex == 0;
     }
     
     /**
@@ -82,13 +81,11 @@ public class IteratorClass extends BasicLinkedListClass{
      */
     public boolean isAtEnd()
     {
-        if(currentIndex==getCurrentSize()) return true;
-        return false;
+        return currentIndex==getCurrentSize();
     }
     
     /**
      * Reports if list is empty
-     * @Override isEmpty in class BasicLinkedListClass
      * @return Boolean result of action; true if empty, false otherwise
      */
     @Override
