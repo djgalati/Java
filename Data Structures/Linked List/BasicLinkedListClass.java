@@ -87,10 +87,16 @@ public class BasicLinkedListClass {
     /**
      * Copy constructor, initializes linked list, then copies all nodes 
      * to local(this) linked list
+     * @param copied 
      */
     protected BasicLinkedListClass(BasicLinkedListClass copied)
     {
-        headRef = new NodeClass(copied.headRef);
+        NodeClass node = new NodeClass(copied.headRef);
+        while(node.nextRef!=null)
+        {
+            node = new NodeClass(copied.headRef);
+            node = node.nextRef;
+        }
     }
     
     /**
