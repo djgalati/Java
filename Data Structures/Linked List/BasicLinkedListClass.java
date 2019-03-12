@@ -42,6 +42,7 @@ public class BasicLinkedListClass {
     
     /**
      * Internal node class for managing data in the linked list
+     * @author djg323
      */
     private class NodeClass
     {
@@ -218,8 +219,7 @@ public class BasicLinkedListClass {
      */
     protected boolean isEmpty()
     {
-        if(headRef==null) return true;
-        return false;
+        return headRef==null;
     }
     
     /**
