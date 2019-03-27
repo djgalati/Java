@@ -1,11 +1,5 @@
 package p7_package;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author djg32
@@ -14,14 +8,8 @@ package p7_package;
 public class Generic_BST_Class <GenericData extends java.lang.Comparable
 <GenericData>>
 {
-    /**
-     * 
-     */
     private BST_Node BST_Root;
     
-    /**
-     * 
-     */
     private class BST_Node
     {
         private BST_Node leftChildRef;
@@ -57,7 +45,7 @@ public class Generic_BST_Class <GenericData extends java.lang.Comparable
      */
     Generic_BST_Class()
     {
-        BST_Root = new BST_Node(<GenericData>);
+        BST_Root = null;
     }
     
     /**
@@ -185,7 +173,7 @@ public class Generic_BST_Class <GenericData extends java.lang.Comparable
      */
     private BST_Node insertHelper(BST_Node localRoot, GenericData inData)
     {
-        GenericData temp = compare(inData, localRoot.nodeData);
+        GenericData temp = null;//inData.compareTo(localRoot.nodeData);
         if(temp.equals(localRoot.nodeData))
         {
             if(localRoot.leftChildRef==null)
@@ -264,7 +252,32 @@ public class Generic_BST_Class <GenericData extends java.lang.Comparable
      */
     private BST_Node removeItemHelper(BST_Node localRoot, GenericData outData)
     {
-        return null;
+        GenericData temp = null;//= outData.compareTo(localRoot.nodeData);
+        if(temp.equals(localRoot.nodeData))
+        {
+            if(localRoot.leftChildRef==null)
+            {
+                localRoot.leftChildRef= new BST_Node(outData);
+                return localRoot;
+            }
+            else
+            {
+                return removeItemHelper(localRoot.leftChildRef, outData);
+            }
+        }
+        else if(temp.equals(outData))
+        {
+            if(localRoot.rightChildRef==null)
+            {
+                localRoot.rightChildRef= new BST_Node(outData);
+                return localRoot;
+            }
+            else
+            {
+                return removeItemHelper(localRoot.rightChildRef, outData);
+            }
+        }
+        return localRoot;
     }
     
     /**
