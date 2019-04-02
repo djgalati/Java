@@ -679,15 +679,15 @@ public class RB_TreeClass
                     {
                         if(localRef == parent_node.rightChildRef)
                         {
-                            rotateLeft(localRef, parent_node, grandParent_node);
-                            localRef = parent_node;
-                            parent_node = localRef.parentRef;
+                          rotateLeft(localRef, parent_node, grandParent_node);
+                          localRef = parent_node;
+                          parent_node = localRef.parentRef;
                         }
                         else
                         {
-                            rotateRight(localRef, parent_node, grandParent_node);
-                            swapColors(parent_node, grandParent_node);
-                            localRef= parent_node;
+                          rotateRight(localRef, parent_node, grandParent_node);
+                          swapColors(parent_node, grandParent_node);
+                          localRef= parent_node;
                         }
                     }
                 }
@@ -705,15 +705,15 @@ public class RB_TreeClass
                     {
                         if(localRef == parent_node.leftChildRef)
                         {
-                            rotateRight(localRef, parent_node, grandParent_node);
-                            localRef = parent_node;
-                            parent_node = localRef.parentRef;
+                          rotateRight(localRef, parent_node, grandParent_node);
+                          localRef = parent_node;
+                          parent_node = localRef.parentRef;
                         }
                         else
                         {
-                            rotateLeft(localRef, parent_node, grandParent_node);
-                            swapColors(parent_node, grandParent_node);
-                            localRef= parent_node;
+                          rotateLeft(localRef, parent_node, grandParent_node);
+                          swapColors(parent_node, grandParent_node);
+                          localRef= parent_node;
                         }
                     }
                 }
